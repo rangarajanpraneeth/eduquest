@@ -27,7 +27,8 @@
          "purpose": "maskable"
        }
    ],
-   "start_url": "/?home=true",
+   "id": "/eduquest/",
+   "start_url": "https://rangarajanpraneeth.github.io/",
    "display": "standalone",
    "orientation": "portrait"
 }
