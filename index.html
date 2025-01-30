@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Quiz and Puzzle App</title>
+
+   <link rel="stylesheet" href="./styles.css">
+
+   <!-- <link rel="manifest" href="manifest.json"> -->
+   <link rel='manifest' href="{{ asset('manifest.json') }}" crossorigin="use-credentials">
+</head>
+
+<body>
+   <!-- <div class="instructions">
+      <img src="./assets/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="close__icon"
+         onclick="closePopup()">
+
+      <div class="p__title">Game Instructions</div>
+      <p class="p">
+         * Correct answers grant you 20 points.
+         <br><br>
+         * Wrong answers deduct 10 points.
+         <br><br>
+         * Click on the subject to get started.
+         <br><br>
+         * Quiz ends after all questions are answered.
+         <br><br>
+         * 
+      </p>
+   </div> -->
+
+
+   <div class="container__title">EduQuest</div>
+   <div class="quiz__app">
+      <div class="points__container">
+         0
+      </div>
+
+      <div class="reset__button">
+         <img src="./assets/restart_alt_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="reset__icon"
+            onclick="resetScore()">
+      </div>
+
+      <div class="container">
+         <div class="subject__titles">
+
+            <div class="maths subject" onclick="startQuiz('maths')">
+               <div>
+                  <img src="./assets/calculate_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="subject__icon">
+               </div>
+               <div class="subject__text">Maths</div>
+            </div>
+
+            <div class="english subject" onclick="startQuiz('english')">
+               <div>
+                  <img src="./assets/menu_book_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="subject__icon">
+               </div>
+               <div class="subject__text">English</div>
+            </div>
+
+            <div class="science subject" onclick="startQuiz('science')">
+               <div>
+                  <img src="./assets/experiment_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt=""
+                     class="subject__icon">
+               </div>
+               <div class="subject__text">Science</div>
+            </div>
+
+            <div class="history subject" onclick="startQuiz('history')">
+               <div>
+                  <img src="./assets/history_edu_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt=""
+                     class="subject__icon">
+               </div>
+               <div class="subject__text">History</div>
+            </div>
+
+         </div>
+      </div>
+
+   </div>
+
+   <div class="quiz">
+
+      <div class="quiz__container">
+         <div class="quiz__title">Placeholder</div>
+
+         <div class="quiz__question">
+            placeholder question
+         </div>
+
+         <div class="quiz__choices">
+         </div>
+
+         <div class="next__button">NEXT</div>
+
+         <div class="progress">
+            <div class="progress__bar" style="width: 0;"></div>
+         </div>
+      </div>
+   </div>
+
+   <div class="account">
+      <div class="name__holder">
+         <div class="account__name">Placeholder</div>
+      </div>
+
+      <div class="stats__holder"></div>
+   </div>
+
+   <div class="navbar">
+      <div class="nav__buttons">
+         <div class="redirect quiz__redirect" onclick="hideAccount()">Quizzes</div>
+         <div class="redirect account__redirect" onclick="showAccount()">Account</div>
+      </div>
+   </div>
+
+   <script src="./script.js"></script>
+
+   <script>
+      if ('serviceworker' in navigator) {
+         navigator.serviceWorker.register('/service-worker.js');
+      }
+   </script>
+</body>
+
+</html>

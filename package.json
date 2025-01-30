@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "pwa-asset-generator": "^6.4.0",
+    "serve": "^14.2.4"
+  }
+}
