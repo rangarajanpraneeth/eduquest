@@ -328,7 +328,7 @@ body {
 }
 
 .seperate {
-   height: 73%;
+   height: 70%;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
