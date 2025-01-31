@@ -295,3 +295,26 @@ body {
    width: 100%;
    border: 1px solid white;
 }
+
+.popup {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 1rem;
+
+   z-index: 999;
+
+   color: black;
+   border-radius: .5rem;
+}
+
+.right {
+   display: none;
+   background-color: #393;
+}
+
+.wrong {
+   display: none;
+   background-color: #f66;
+}

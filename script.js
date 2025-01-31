@@ -116,42 +116,91 @@ function selectAnswer(option, correctAnswer, button) {
    selectedAnswer = option === correctAnswer; // Store whether the selected answer is correct
 }
 
+
+
 function handleNext() {
    if (selectedAnswer === null) {
       alert("Please select an answer before proceeding.");
       return;
    }
 
+   // Show the appropriate popup
+   const correctPopup = document.querySelector(".right");
+   const wrongPopup = document.querySelector(".wrong");
+
+   if (selectedAnswer) {
+      correctPopup.style.display = "flex"; // Show correct popup
+   } else {
+      wrongPopup.style.display = "flex"; // Show wrong popup
+   }
+
+   // Update score and progress
    if (selectedAnswer) {
       totalScore += 20;
       totalRight++;
    } else if (totalScore > 0) {
-      totalScore -= 10; // Deduct points only if totalScore is greater than 0
-
+      totalScore -= 10;
       totalWrong++;
    }
    questionsAnswered++;
 
-   
-
    if (totalScore > highestScore) highestScore += 20;
 
    updateProgress();
-
    updateProgressBar();
 
+   // Automatically hide the popup after 250 milliseconds
+   setTimeout(() => {
+      correctPopup.style.display = "none"; // Hide correct popup
+      wrongPopup.style.display = "none"; // Hide wrong popup
 
-   currentQuestionIndex++;
-   if (currentQuestionIndex < subjects[currentSubject].quiz.length) {
-      showQuestion();
-   } else {
-      currentQuestionIndex++
-      setTimeout(() => {
+      // Move to the next question or close the quiz
+      currentQuestionIndex++;
+      if (currentQuestionIndex < subjects[currentSubject].quiz.length) {
+         showQuestion(); // Show the next question
+      } else {
          closeQuiz();
          document.querySelector('.progress__bar').style.width = '0';
-      }, 500)
-   }
+      }
+   }, 500); // 250 milliseconds delay
 }
+
+// function handleNext() {
+//    if (selectedAnswer === null) {
+//       alert("Please select an answer before proceeding.");
+//       return;
+//    }
+
+//    if (selectedAnswer) {
+//       totalScore += 20;
+//       totalRight++;
+//    } else if (totalScore > 0) {
+//       totalScore -= 10; // Deduct points only if totalScore is greater than 0
+
+//       totalWrong++;
+//    }
+//    questionsAnswered++;
+
+   
+
+//    if (totalScore > highestScore) highestScore += 20;
+
+//    updateProgress();
+
+//    updateProgressBar();
+
+
+//    currentQuestionIndex++;
+//    if (currentQuestionIndex < subjects[currentSubject].quiz.length) {
+//       showQuestion();
+//    } else {
+//       currentQuestionIndex++
+//       setTimeout(() => {
+//          closeQuiz();
+//          document.querySelector('.progress__bar').style.width = '0';
+//       }, 500)
+//    }
+// }
 
 function updateProgress() {
    const progressBar = document.querySelector(".points__container");

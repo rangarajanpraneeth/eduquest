@@ -15,6 +15,13 @@
 </head>
 
 <body>
+   <!-- <div class="popup">
+      <div class="popup__content"> -->
+   <div class="popup wrong">INCORRECT</div>
+   <div class="popup right">CORRECT</div>
+   <!-- </div>
+   </div> -->
+
    <div class="instructions">
       <img src="./assets/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="close__icon"
          onclick="closePopup()">
@@ -29,7 +36,7 @@
          <br><br>
          * Quiz ends after all questions are answered.
          <br><br>
-         * 
+         *
       </p>
    </div>
 
@@ -151,7 +158,7 @@
       // }
 
       if (navigator.serviceWorker) {
-         navigator.serviceWorker.register('/eduquest/service-worker.js', {scope: '/eduquest/'})
+         navigator.serviceWorker.register('/eduquest/service-worker.js', { scope: '/eduquest/' })
       }
    </script>
 </body>
