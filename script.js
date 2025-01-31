@@ -1,6 +1,7 @@
 let currentSubject = null;
 let currentQuestionIndex = 0;
 let totalScore = 0;
+let questionsAnswered = 0;
 let selectedAnswer = null; // Track selected answer
 let selectedButton = null; // Track the selected button
 
@@ -45,6 +46,11 @@ const subjects = {
    }
 };
 
+let totalRight = 0;
+let totalWrong = 0;
+
+let highestScore = 0;
+
 function startQuiz(subject) {
    currentSubject = subject;
    currentQuestionIndex = 0;
@@ -65,7 +71,7 @@ function showQuestion() {
    const subjectData = subjects[currentSubject];
    const question = subjectData.quiz[currentQuestionIndex];
 
-   document.querySelector(".quiz__title").textContent = `${currentSubject.charAt(0).toUpperCase() + currentSubject.slice(1)} Quiz`;
+   // document.querySelector(".quiz__title").textContent = `${currentSubject.charAt(0).toUpperCase() + currentSubject.slice(1)} Quiz`;
    const questionContainer = document.querySelector(".quiz__question");
    questionContainer.innerHTML = ""; // Clear previous question
 
@@ -118,9 +124,17 @@ function handleNext() {
 
    if (selectedAnswer) {
       totalScore += 20;
+      totalRight++;
    } else if (totalScore > 0) {
       totalScore -= 10; // Deduct points only if totalScore is greater than 0
+
+      totalWrong++;
    }
+   questionsAnswered++;
+
+   
+
+   if (totalScore > highestScore) highestScore += 20;
 
    updateProgress();
 
@@ -165,6 +179,15 @@ const resetScore = () => {
 
 
 function showAccount() {
+   document.querySelector('.acc__points').innerHTML = highestScore;
+   document.querySelector('.acc__qanswered').innerHTML = questionsAnswered;
+   document.querySelector('.acc__qright').innerHTML = totalRight;
+   document.querySelector('.acc__qwrong').innerHTML = totalWrong;
+   // document.querySelector('.').innerHTML = ;
+   // document.querySelector('.').innerHTML = ;
+   // document.querySelector('.').innerHTML = ;
+   // document.querySelector('.').innerHTML = ;
+
    document.querySelector('.account').style.display = 'block';
 }
 
