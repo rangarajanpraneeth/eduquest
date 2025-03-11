@@ -175,6 +175,58 @@ body {
    background: radial-gradient(#72e494, #32b849);
 }
 
+.loginPage {
+   width: 100vw;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 10000;
+   background-color: #57e;
+   display: flex;
+   /* display: block; */
+}
+
+.createAccountPage {
+   width: 100vw;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 9999;
+   background-color: #57e;
+   display: none;
+   /* display: none; */
+}
+
+.lcp_title {
+   width: fit-content;
+   font-size: 2rem;
+   font-weight: 500;
+   margin-bottom: 4rem;
+}
+
+.lcp {
+   padding: 2rem;
+   flex-direction: column;
+   align-items: center;
+   gap: 2rem;
+}
+
+.lcp_button {
+   width: 50%;
+   background-color: #1d52bc;
+   padding: .5rem;
+   text-align: center;
+   border-radius: .5rem;
+}
+
+input[type=text] {
+   padding: .5rem;
+   width: 75%;
+   border-radius: .5rem;
+}
+
 .instructions {
    position: fixed;
    z-index: 97;

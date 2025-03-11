@@ -226,6 +226,21 @@ const resetScore = () => {
    setTimeout(() => closeQuiz(), 500);
 }
 
+const createAccPg = document.querySelector('.createAccountPage');
+const loginPage = document.querySelector('.loginPage');
+
+function goToMainPage() {
+   console.log('logged in');
+   loginPage.style.display = 'none';
+   createAccPg.style.display = 'none';
+}
+
+function goToCreatePage() {
+   console.log('redirected to create acc');
+   loginPage.style.display = 'none';
+   createAccPg.style.display = 'flex';
+}
+
 
 function showAccount() {
    document.querySelector('.acc__points').innerHTML = highestScore;
