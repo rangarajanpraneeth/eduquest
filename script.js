@@ -241,9 +241,9 @@ function goToMainPage() {
    if (password !== PASSWORD) {
       alert('Incorrect Password');
    } else {
-      alert('Login successful!');
       loginPage.style.display = 'none';
       createAccPg.style.display = 'none';
+      alert('Login successful!');
    }
    // if (passwordRegex.test(password)) {
    //    alert('Login successful!');
