@@ -181,7 +181,7 @@ function handleNext() {
 //    }
 //    questionsAnswered++;
 
-   
+
 
 //    if (totalScore > highestScore) highestScore += 20;
 
@@ -229,16 +229,78 @@ const resetScore = () => {
 const createAccPg = document.querySelector('.createAccountPage');
 const loginPage = document.querySelector('.loginPage');
 
+const PASSWORD = 'p@55w0rd';
 function goToMainPage() {
    console.log('logged in');
-   loginPage.style.display = 'none';
-   createAccPg.style.display = 'none';
+
+   let pwdInputField = document.getElementById('pwd');
+   let password = pwdInputField.value;
+
+   // let pwdRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+   if (password !== PASSWORD) {
+      alert('Incorrect Password');
+   } else {
+      alert('Login successful!');
+      loginPage.style.display = 'none';
+      createAccPg.style.display = 'none';
+   }
+   // if (passwordRegex.test(password)) {
+   //    alert('Login successful!');
+   //    loginPage.style.display = 'none';
+   //    createAccPg.style.display = 'none';
+   // } else {
+   //    alert('Password must be at least 8 characters long, and include an uppercase letter, lowercase letter, number, and special character.');
+   // }
+
+   // loginPage.style.display = 'none';
+   // createAccPg.style.display = 'none';
+}
+
+function myFunction1() {
+   var x = document.getElementById("pwd");
+   if (x.type === "password") {
+      x.type = "text";
+   } else {
+      x.type = "password";
+   }
+}
+
+function myFunction2() {
+   var x = document.getElementById("cpwd");
+   if (x.type === "password") {
+      x.type = "text";
+   } else {
+      x.type = "password";
+   }
 }
 
 function goToCreatePage() {
    console.log('redirected to create acc');
    loginPage.style.display = 'none';
    createAccPg.style.display = 'flex';
+}
+
+function popupCreate() {
+   let pwdInputField = document.getElementById('cpwd');
+   let password = pwdInputField.value;
+
+   let pwdRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+   if (pwdRe.test(password)) {
+      alert('Account successfully created');
+      // loginPage.style.display = 'none';
+      // createAccPg.style.display = 'none';
+   } else {
+      alert('Password must be at least 8 characters long, and include an uppercase letter, lowercase letter, number, and special character.');
+   }
+   // alert('Account successfully created');
+}
+
+function goToLogin() {
+   console.log('redirected to login');
+   loginPage.style.display = 'flex';
+   createAccPg.style.display = 'none';
 }
 
 

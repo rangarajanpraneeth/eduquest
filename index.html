@@ -19,7 +19,10 @@
       <div class="lcp_title">LOG IN</div>
 
       <input type="text" placeholder="Username">
-      <input type="text" placeholder="Password">
+      <div class="flex">
+         <input type="password" placeholder="Password" id="pwd">
+         <input type="checkbox" onclick="myFunction1()">
+      </div>
 
       <div class="lcp_button" onclick="goToMainPage()">Log in</div>
       <div class="lcp_button" onclick="goToCreatePage()">Create Account</div>
@@ -28,9 +31,13 @@
       <div class="lcp_title">CREATE ACCOUNT</div>
 
       <input type="text" placeholder="Username">
-      <input type="text" placeholder="Password">
+      <div class="flex">
+         <input type="password" placeholder="Password" id="cpwd">
+         <input type="checkbox" onclick="myFunction2()">
+      </div>
 
-      <div class="lcp_button" onclick="goToMainPage()">Create Account</div>
+      <div class="lcp_button" onclick="popupCreate()">Create Account</div>
+      <div class="lcp_button" onclick="goToLogin()">Log in</div>
    </div>
 
    <!-- <div class="popup">
