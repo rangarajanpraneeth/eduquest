@@ -229,7 +229,7 @@ const resetScore = () => {
 const createAccPg = document.querySelector('.createAccountPage');
 const loginPage = document.querySelector('.loginPage');
 
-const PASSWORD = 'p@55w0rd';
+const PASSWORD = 'P@55w0rd';
 function goToMainPage() {
    console.log('logged in');
 
